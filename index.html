@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>План лечения</title>
+<title>План лечения v2</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap');
 
@@ -45,10 +45,7 @@
     margin-bottom: 4px;
   }
 
-  header p {
-    font-size: 13px;
-    color: var(--muted);
-  }
+  header p { font-size: 13px; color: var(--muted); }
 
   .progress-bar-wrap {
     background: var(--border);
@@ -64,12 +61,7 @@
     border-radius: 99px;
     transition: width 0.4s ease;
   }
-  .progress-label {
-    font-size: 12px;
-    color: var(--muted);
-    text-align: center;
-    margin-top: 4px;
-  }
+  .progress-label { font-size: 12px; color: var(--muted); text-align: center; margin-top: 4px; }
 
   .day-nav {
     display: flex;
@@ -94,36 +86,16 @@
     transition: all 0.2s;
     white-space: nowrap;
   }
-  .day-btn.active {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: white;
-  }
-  .day-btn.completed {
-    background: var(--done-bg);
-    border-color: var(--accent2);
-    color: var(--done-text);
-  }
+  .day-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
+  .day-btn.completed { background: var(--done-bg); border-color: var(--accent2); color: var(--done-text); }
 
   .day-panel { display: none; }
   .day-panel.active { display: block; }
 
-  .day-title {
-    font-family: 'Unbounded', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 4px;
-    color: var(--text);
-  }
-  .day-subtitle {
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 16px;
-  }
+  .day-title { font-family: 'Unbounded', sans-serif; font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .day-subtitle { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
 
-  .section {
-    margin-bottom: 14px;
-  }
+  .section { margin-bottom: 14px; }
 
   .section-title {
     font-size: 11px;
@@ -148,18 +120,11 @@
     transition: all 0.2s;
     user-select: none;
   }
-
   .task:active { transform: scale(0.98); }
-
-  .task.done {
-    background: var(--done-bg);
-    border-color: var(--accent2);
-    opacity: 0.75;
-  }
+  .task.done { background: var(--done-bg); border-color: var(--accent2); opacity: 0.75; }
 
   .checkbox {
-    width: 22px;
-    height: 22px;
+    width: 22px; height: 22px;
     border-radius: 6px;
     border: 2px solid var(--border);
     flex-shrink: 0;
@@ -170,64 +135,36 @@
     margin-top: 1px;
     background: white;
   }
-
-  .task.done .checkbox {
-    background: var(--accent);
-    border-color: var(--accent);
-  }
-
-  .checkbox-icon {
-    display: none;
-    color: white;
-    font-size: 13px;
-    font-weight: 700;
-  }
+  .task.done .checkbox { background: var(--accent); border-color: var(--accent); }
+  .checkbox-icon { display: none; color: white; font-size: 13px; font-weight: 700; }
   .task.done .checkbox-icon { display: block; }
 
   .task-content { flex: 1; }
-
-  .task-name {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 2px;
-    line-height: 1.3;
-  }
-  .task.done .task-name {
-    text-decoration: line-through;
-    color: var(--muted);
-  }
-
-  .task-detail {
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.4;
-  }
-
-  .tag {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 7px;
-    border-radius: 99px;
-    margin-left: 6px;
-    vertical-align: middle;
-  }
-  .tag-eye { background: #dbeafe; color: #1d4ed8; }
-  .tag-pill { background: #fef3c7; color: #92400e; }
-  .tag-shot { background: #fce7f3; color: #9d174d; }
-  .tag-throat { background: #ede9fe; color: #5b21b6; }
-  .tag-warn { background: #fee2e2; color: #991b1b; }
+  .task-name { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; line-height: 1.3; }
+  .task.done .task-name { text-decoration: line-through; color: var(--muted); }
+  .task-detail { font-size: 12px; color: var(--muted); line-height: 1.4; }
 
   .note-box {
-    background: #fff8e1;
-    border: 1.5px solid #ffe082;
     border-radius: 12px;
     padding: 12px 14px;
     font-size: 12px;
-    color: #7c5c00;
-    margin-bottom: 14px;
     line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .note-box.yellow { background: #fff8e1; border: 1.5px solid #ffe082; color: #7c5c00; }
+  .note-box.red { background: #fff0ee; border: 1.5px solid #ffb4a2; color: #9c2a10; }
+  .note-box.blue { background: #e8f4fd; border: 1.5px solid #90caf9; color: #1565c0; }
+
+  .new-badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 99px;
+    background: #e76f51;
+    color: white;
+    margin-left: 6px;
+    vertical-align: middle;
   }
 
   .reset-btn {
@@ -248,7 +185,7 @@
 
 <header>
   <h1>💊 План лечения</h1>
-  <p>Начало: 6 мая 2025, среда</p>
+  <p>Обновлено после повторного приёма 8 мая</p>
   <div class="progress-bar-wrap">
     <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
   </div>
@@ -257,270 +194,432 @@
 
 <div class="day-nav" id="dayNav"></div>
 <div id="panels"></div>
-
 <button class="reset-btn" onclick="resetDay()">Сбросить отметки текущего дня</button>
 
 <script>
 const DAYS = [
+  // ── 8 МАЯ ──────────────────────────────────────────────────────────────
   {
-    label: "6 мая\nСегодня",
-    title: "6 мая, среда — Сегодня (вечер)",
-    subtitle: "Начало лечения. Только вечерние процедуры.",
-    note: "⚠️ Комвео продолжай капать каждый час до сна. Нимесил уже принят.",
+    label: "8 мая\nСегодня",
+    title: "8 мая, пятница — День 2",
+    subtitle: "Обновлённое назначение. Новые препараты с сегодня.",
+    notes: [
+      { type: "red", text: "⚠️ Неттацин — перерыв между закапываниями теперь 1 ЧАС (не 5 минут!)\n⚠️ Окусалин теперь до 10 дней (а не 5)" },
+      { type: "blue", text: "🆕 Новое с сегодня: Тримедат 200 мг 2 р/д перед едой\n🆕 Пепидол 5% 2 ст.л. 2 р/д (разнос с лекарствами 1 час)\n🆕 Метабиотик 1 ч.л. в день\n🆕 Энтерол теперь 2 р/д до 10 дней" },
+    ],
     sections: [
       {
-        title: "👁 Глаза — продолжить прямо сейчас",
+        title: "🌅 Утро — до завтрака",
         tasks: [
-          { id:"d0t1", name:"Комвео (левый глаз)", detail:"1 кап каждый час до сна" },
-          { id:"d0t2", name:"Офтальмоферон (оба глаза)", detail:"1 кап в каждый глаз" },
-          { id:"d0t3", name:"Мирамистин (оба глаза)", detail:"Туалет век — протереть" },
+          { id:"d1t0a", name:"Тримедат 200 мг", detail:"1 таб ДО еды — новый препарат!", isNew: true },
         ]
       },
       {
-        title: "🌙 Перед сном",
-        tasks: [
-          { id:"d0t4", name:"Неттацин/Тобрекс (левый глаз)", detail:"1 кап (подожди 5 мин после Комвео)" },
-          { id:"d0t5", name:"Посиформин 2% (левый глаз)", detail:"Мазь за верхнее веко" },
-          { id:"d0t6", name:"Гидрокортизон ПОС (левый глаз)", detail:"Мазь на кожу века" },
-          { id:"d0t7", name:"Малавит", detail:"10 кап на стакан воды — полоскать горло" },
-          { id:"d0t8", name:"Исмиген", detail:"1 таблетка за щёку на ночь" },
-          { id:"d0t9", name:"Кларитин", detail:"1 таб вечером" },
-          { id:"d0t10", name:"Цинк пиколинат 50 мг", detail:"После еды, вечером" },
-          { id:"d0t11", name:"Вит C эстер 3000 мг", detail:"После еды" },
-          { id:"d0t12", name:"Вит D 10 000 МЕ", detail:"Только в завтрак — перенести на утро 7 мая" },
-        ]
-      }
-    ]
-  },
-  {
-    label: "7 мая\nДень 1",
-    title: "7 мая, четверг — День 1",
-    subtitle: "Полный день лечения. Сумамед начинаем сегодня.",
-    note: "⚠️ Между каплями в левый глаз — пауза 5 минут! Соблюдай порядок: Окусалин → Комвео → Неттацин → пауза → Посиформин вечером.",
-    sections: [
-      {
-        title: "🌅 Утро (завтрак)",
+        title: "🌅 Утро — завтрак (8:00)",
         tasks: [
           { id:"d1t1", name:"Мирамистин (оба глаза)", detail:"Туалет век" },
-          { id:"d1t2", name:"Окусалин 3% (левый глаз)", detail:"Обильно промыть — 1 доза" },
-          { id:"d1t3", name:"Комвео (левый глаз)", detail:"1 кап, подожди 5 мин" },
-          { id:"d1t4", name:"Неттацин (левый глаз)", detail:"1 кап, подожди 5 мин" },
-          { id:"d1t5", name:"Офтальмоферон (оба глаза)", detail:"1 кап в каждый глаз" },
-          { id:"d1t6", name:"Нимесил", detail:"1 пакет на 150 мл воды — после завтрака" },
-          { id:"d1t7", name:"Сумамед 500", detail:"1 таб — после завтрака" },
-          { id:"d1t8", name:"Энтерол", detail:"1 капсула" },
-          { id:"d1t9", name:"Лавомакс 125 мг", detail:"1 таб (1-й день)" },
-          { id:"d1t10", name:"Вит D 10 000 МЕ", detail:"В завтрак" },
-          { id:"d1t11", name:"Вит C эстер 3000 мг", detail:"После еды" },
-          { id:"d1t12", name:"Глюконат кальция — УКОЛ", detail:"5,0 в/м — попросить папу сделать сегодня или завтра (всего 2 укола)" },
+          { id:"d1t2", name:"Окусалин 3% (левый глаз)", detail:"Обильно промыть" },
+          { id:"d1t3", name:"Комвео (левый глаз)", detail:"1 кап — ждать 1 ЧАС до Неттацина" },
+          { id:"d1t4", name:"Офтальмоферон (оба глаза)", detail:"1 кап" },
+          { id:"d1t5", name:"Нимесил", detail:"1 пакет на 150 мл воды — после еды (до 9.05)" },
+          { id:"d1t6", name:"Сумамед 500", detail:"1 таб — день 2" },
+          { id:"d1t7", name:"Энтерол", detail:"1 капсула — теперь 2 р/д до 10 дней", isNew: true },
+          { id:"d1t8", name:"Лавомакс 125 мг", detail:"1 таб — день 2" },
+          { id:"d1t9", name:"Вит D 10 000 МЕ", detail:"В завтрак — день 2" },
+          { id:"d1t10", name:"Вит C эстер 3000 мг", detail:"После еды" },
+          { id:"d1t11", name:"Глюконат кальция — УКОЛ №2", detail:"5,0 в/м — папа" },
+          { id:"d1t12", name:"Метабиотик", detail:"1 ч.л. в день — в любое время", isNew: true },
         ]
       },
       {
-        title: "☀️ День",
+        title: "⏰ Через 1 час после Комвео",
         tasks: [
-          { id:"d1t13", name:"Комвео (левый глаз)", detail:"1 кап × 6 р/д — продолжать по расписанию" },
-          { id:"d1t14", name:"Неттацин (левый глаз)", detail:"1 кап × 6 р/д" },
-          { id:"d1t15", name:"Офтальмоферон (оба глаза)", detail:"1 кап × 3 р/д" },
+          { id:"d1t13", name:"Неттацин (левый глаз)", detail:"1 кап — перерыв между закапываниями 1 час!" },
         ]
       },
       {
-        title: "🌙 Вечер / перед сном",
+        title: "☀️ День (12:00)",
         tasks: [
-          { id:"d1t16", name:"Мирамистин (оба глаза)", detail:"Туалет век" },
-          { id:"d1t17", name:"Окусалин 3% (левый глаз)", detail:"Обильно промыть — 2-й раз за день" },
-          { id:"d1t18", name:"Комвео (левый глаз)", detail:"1 кап" },
-          { id:"d1t19", name:"Неттацин (левый глаз)", detail:"1 кап (пауза 5 мин)" },
-          { id:"d1t20", name:"Посиформин 2% (левый глаз)", detail:"Мазь за верхнее веко" },
-          { id:"d1t21", name:"Гидрокортизон ПОС (левый глаз)", detail:"Мазь на кожу века" },
-          { id:"d1t22", name:"Нимесил", detail:"1 пакет — после ужина" },
-          { id:"d1t23", name:"Малавит", detail:"10 кап на стакан — полоскать горло" },
-          { id:"d1t24", name:"Исмиген", detail:"1 таб за щёку на ночь" },
-          { id:"d1t25", name:"Кларитин", detail:"1 таб вечером" },
-          { id:"d1t26", name:"Цинк пиколинат 50 мг", detail:"После ужина" },
+          { id:"d1t14", name:"Комвео (левый глаз)", detail:"1 кап (всего 6 р/д)" },
+          { id:"d1t15", name:"Офтальмоферон (оба глаза)", detail:"1 кап (всего 3 р/д)" },
+        ]
+      },
+      {
+        title: "⏰ Через 1 час — дневной Неттацин",
+        tasks: [
+          { id:"d1t16", name:"Неттацин (левый глаз)", detail:"1 кап через 1 час после Комвео дневного" },
+        ]
+      },
+      {
+        title: "🌙 Вечер — до ужина",
+        tasks: [
+          { id:"d1t17a", name:"Тримедат 200 мг", detail:"1 таб ДО ужина" },
+          { id:"d1t17b", name:"Пепидол 5%", detail:"2 ст.л. — за 1 ЧАС до/после других лекарств!", isNew: true },
+        ]
+      },
+      {
+        title: "🌙 Вечер (19:00) — после ужина",
+        tasks: [
+          { id:"d1t17", name:"Мирамистин (оба глаза)", detail:"Туалет век" },
+          { id:"d1t18", name:"Окусалин 3% (левый глаз)", detail:"Обильно промыть — 2-й раз" },
+          { id:"d1t19", name:"Комвео (левый глаз)", detail:"1 кап — ждать 1 час до Неттацина" },
+          { id:"d1t20", name:"Офтальмоферон (оба глаза)", detail:"1 кап" },
+          { id:"d1t21", name:"Посиформин 2% (левый глаз)", detail:"Мазь на ресничный край века" },
+          { id:"d1t22", name:"Гидрокортизон ПОС (левый глаз)", detail:"Мазь на кожу в/века" },
+          { id:"d1t23", name:"Нимесил", detail:"1 пакет после ужина" },
+          { id:"d1t24", name:"Энтерол", detail:"2-я капсула за день" },
+          { id:"d1t25", name:"Малавит", detail:"10 кап на стакан — полоскать горло" },
+          { id:"d1t26", name:"Исмиген", detail:"1 таб за щёку на ночь" },
+          { id:"d1t27", name:"Кларитин", detail:"1 таб вечером — теперь до 10 дней" },
+          { id:"d1t28", name:"Цинк пиколинат 50 мг", detail:"После ужина" },
+          { id:"d1t29", name:"Вит C эстер 3000 мг", detail:"После еды" },
+        ]
+      },
+      {
+        title: "⏰ Через 1 час — вечерний Неттацин",
+        tasks: [
+          { id:"d1t30", name:"Неттацин (левый глаз)", detail:"1 кап через 1 час после вечернего Комвео" },
         ]
       }
     ]
   },
-  {
-    label: "8 мая\nДень 2",
-    title: "8 мая, пятница — День 2",
-    subtitle: "Сумамед день 2. Лавомакс день 2.",
-    note: "⚠️ Флюкостат принимается ЗАВТРА (3-й день Сумамеда). Сегодня без него.",
-    sections: [
-      {
-        title: "🌅 Утро (завтрак)",
-        tasks: [
-          { id:"d2t1", name:"Мирамистин (оба глаза)", detail:"Туалет век" },
-          { id:"d2t2", name:"Окусалин 3% (левый глаз)", detail:"Промыть обильно — 1 доза" },
-          { id:"d2t3", name:"Комвео (левый глаз)", detail:"1 кап, пауза 5 мин" },
-          { id:"d2t4", name:"Неттацин (левый глаз)", detail:"1 кап, пауза 5 мин" },
-          { id:"d2t5", name:"Офтальмоферон (оба глаза)", detail:"1 кап в каждый" },
-          { id:"d2t6", name:"Нимесил", detail:"1 пакет после завтрака" },
-          { id:"d2t7", name:"Сумамед 500", detail:"1 таб — день 2" },
-          { id:"d2t8", name:"Энтерол", detail:"1 капсула" },
-          { id:"d2t9", name:"Лавомакс 125 мг", detail:"1 таб — день 2" },
-          { id:"d2t10", name:"Вит D 10 000 МЕ", detail:"В завтрак — день 2" },
-          { id:"d2t11", name:"Вит C эстер 3000 мг", detail:"После еды" },
-          { id:"d2t12", name:"Глюконат кальция — УКОЛ", detail:"2-й укол (если не сделали вчера)" },
-        ]
-      },
-      {
-        title: "☀️ День",
-        tasks: [
-          { id:"d2t13", name:"Комвео (левый глаз)", detail:"1 кап × 6 р/д" },
-          { id:"d2t14", name:"Неттацин (левый глаз)", detail:"1 кап × 6 р/д" },
-          { id:"d2t15", name:"Офтальмоферон (оба глаза)", detail:"1 кап × 3 р/д" },
-        ]
-      },
-      {
-        title: "🌙 Вечер / перед сном",
-        tasks: [
-          { id:"d2t16", name:"Мирамистин (оба глаза)", detail:"Туалет век" },
-          { id:"d2t17", name:"Окусалин 3% (левый глаз)", detail:"Промыть — 2-й раз" },
-          { id:"d2t18", name:"Комвео (левый глаз)", detail:"1 кап" },
-          { id:"d2t19", name:"Неттацин (левый глаз)", detail:"1 кап (пауза 5 мин)" },
-          { id:"d2t20", name:"Посиформин 2% (левый глаз)", detail:"Мазь за верхнее веко" },
-          { id:"d2t21", name:"Гидрокортизон ПОС (левый глаз)", detail:"Мазь на кожу века" },
-          { id:"d2t22", name:"Нимесил", detail:"1 пакет после ужина" },
-          { id:"d2t23", name:"Малавит", detail:"Полоскать горло" },
-          { id:"d2t24", name:"Исмиген", detail:"1 таб за щёку на ночь" },
-          { id:"d2t25", name:"Кларитин", detail:"1 таб вечером" },
-          { id:"d2t26", name:"Цинк пиколинат 50 мг", detail:"После ужина" },
-        ]
-      }
-    ]
-  },
+
+  // ── 9 МАЯ ──────────────────────────────────────────────────────────────
   {
     label: "9 мая\nДень 3",
     title: "9 мая, суббота — День 3",
-    subtitle: "Последний день Сумамеда и Нимесила. Флюкостат сегодня!",
-    note: "✅ Окусалин заканчивается сегодня (5 дней). Сумамед последний день. Нимесил последний день.",
+    subtitle: "ФЛЮКОСТАТ • Последний Нимесил и Сумамед • Альфа нормикс начинаем",
+    notes: [
+      { type: "red", text: "⚠️ ФЛЮКОСТАТ 150 — 1 капс однократно сегодня!\n⚠️ Альфа нормикс 400 начинаем с сегодня — 1 таб 2 р/д перед едой × 3 дня\n⚠️ Нимесил — последний день (до 9.05)" },
+    ],
     sections: [
       {
-        title: "🌅 Утро (завтрак)",
+        title: "🌅 Утро — до завтрака",
         tasks: [
-          { id:"d3t1", name:"Мирамистин (оба глаза)", detail:"Туалет век" },
-          { id:"d3t2", name:"Окусалин 3% (левый глаз)", detail:"Последний раз — промыть обильно" },
-          { id:"d3t3", name:"Комвео (левый глаз)", detail:"1 кап, пауза 5 мин" },
-          { id:"d3t4", name:"Неттацин (левый глаз)", detail:"1 кап, пауза 5 мин" },
-          { id:"d3t5", name:"Офтальмоферон (оба глаза)", detail:"1 кап в каждый" },
-          { id:"d3t6", name:"Нимесил", detail:"1 пакет после завтрака — ПОСЛЕДНИЙ ДЕНЬ" },
-          { id:"d3t7", name:"Сумамед 500", detail:"1 таб — ПОСЛЕДНИЙ ДЕНЬ" },
-          { id:"d3t8", name:"Энтерол", detail:"1 капсула — ПОСЛЕДНИЙ ДЕНЬ" },
-          { id:"d3t9", name:"Флюкостат 150", detail:"1 капсула однократно — только сегодня!" },
-          { id:"d3t10", name:"Вит D 10 000 МЕ", detail:"В завтрак — ПОСЛЕДНИЙ ДЕНЬ (с завтра 5000)" },
-          { id:"d3t11", name:"Вит C эстер 3000 мг", detail:"После еды — ПОСЛЕДНИЙ ДЕНЬ (с завтра 1000×4)" },
+          { id:"d2t0", name:"Тримедат 200 мг", detail:"1 таб ДО еды" },
+          { id:"d2t0b", name:"Альфа нормикс 400", detail:"1 таб ДО еды — ПЕРВЫЙ ДЕНЬ!", isNew: true },
         ]
       },
       {
-        title: "☀️ День",
+        title: "🌅 Утро (8:00)",
         tasks: [
-          { id:"d3t12", name:"Комвео (левый глаз)", detail:"1 кап × 6 р/д" },
-          { id:"d3t13", name:"Неттацин (левый глаз)", detail:"1 кап × 6 р/д" },
-          { id:"d3t14", name:"Офтальмоферон (оба глаза)", detail:"1 кап × 3 р/д" },
+          { id:"d2t1", name:"Мирамистин (оба глаза)", detail:"Туалет век" },
+          { id:"d2t2", name:"Окусалин 3% (левый глаз)", detail:"Обильно промыть" },
+          { id:"d2t3", name:"Комвео (левый глаз)", detail:"1 кап — ждать 1 час до Неттацина" },
+          { id:"d2t4", name:"Офтальмоферон (оба глаза)", detail:"1 кап" },
+          { id:"d2t5", name:"Нимесил", detail:"1 пакет — ПОСЛЕДНИЙ ДЕНЬ (до 9.05)" },
+          { id:"d2t6", name:"Сумамед 500", detail:"1 таб — ПОСЛЕДНИЙ" },
+          { id:"d2t7", name:"Энтерол", detail:"1 капсула" },
+          { id:"d2t8", name:"⚠️ ФЛЮКОСТАТ 150", detail:"1 капс — ТОЛЬКО СЕГОДНЯ однократно!" },
+          { id:"d2t9", name:"Вит D 10 000 МЕ", detail:"ПОСЛЕДНИЙ (с завтра 5000)" },
+          { id:"d2t10", name:"Вит C эстер 3000 мг", detail:"ПОСЛЕДНИЙ (с завтра 1000×4)" },
+          { id:"d2t11", name:"Метабиотик", detail:"1 ч.л." },
         ]
       },
       {
-        title: "🌙 Вечер / перед сном",
+        title: "⏰ Через 1 час после Комвео",
         tasks: [
-          { id:"d3t15", name:"Окусалин 3% (левый глаз)", detail:"Промыть — последний раз!" },
-          { id:"d3t16", name:"Мирамистин (оба глаза)", detail:"Туалет век" },
-          { id:"d3t17", name:"Комвео (левый глаз)", detail:"1 кап" },
-          { id:"d3t18", name:"Неттацин (левый глаз)", detail:"1 кап (пауза 5 мин)" },
-          { id:"d3t19", name:"Посиформин 2% (левый глаз)", detail:"Мазь за верхнее веко" },
-          { id:"d3t20", name:"Гидрокортизон ПОС (левый глаз)", detail:"Мазь на кожу века" },
-          { id:"d3t21", name:"Нимесил", detail:"1 пакет после ужина — последний!" },
-          { id:"d3t22", name:"Малавит", detail:"Полоскать горло" },
-          { id:"d3t23", name:"Исмиген", detail:"1 таб за щёку на ночь" },
-          { id:"d3t24", name:"Кларитин", detail:"1 таб — последний (5 дней завершены)" },
-          { id:"d3t25", name:"Цинк пиколинат 50 мг", detail:"После ужина" },
-          { id:"d3t26", name:"Лавомакс 125 мг", detail:"ПРОПУСК — следующий приём 10 мая (через день)" },
+          { id:"d2t12", name:"Неттацин (левый глаз)", detail:"1 кап" },
+        ]
+      },
+      {
+        title: "☀️ День (12:00)",
+        tasks: [
+          { id:"d2t13", name:"Комвео (левый глаз)", detail:"1 кап" },
+          { id:"d2t14", name:"Офтальмоферон (оба глаза)", detail:"1 кап" },
+          { id:"d2t15", name:"Пепидол 5%", detail:"2 ст.л. — за 1 час до/после лекарств" },
+        ]
+      },
+      {
+        title: "⏰ Через 1 час",
+        tasks: [
+          { id:"d2t16", name:"Неттацин (левый глаз)", detail:"1 кап" },
+        ]
+      },
+      {
+        title: "🌙 Вечер — до ужина",
+        tasks: [
+          { id:"d2t17", name:"Тримедат 200 мг", detail:"1 таб ДО ужина — ПОСЛЕДНИЙ (3 дня)" },
+          { id:"d2t17b", name:"Альфа нормикс 400", detail:"1 таб ДО ужина — день 1" },
+        ]
+      },
+      {
+        title: "🌙 Вечер (19:00)",
+        tasks: [
+          { id:"d2t18", name:"Мирамистин (оба глаза)", detail:"Туалет век" },
+          { id:"d2t19", name:"Окусалин 3% (левый глаз)", detail:"Обильно промыть" },
+          { id:"d2t20", name:"Комвео (левый глаз)", detail:"1 кап — ждать 1 час" },
+          { id:"d2t21", name:"Офтальмоферон (оба глаза)", detail:"1 кап" },
+          { id:"d2t22", name:"Посиформин 2% (левый глаз)", detail:"Мазь на ресничный край" },
+          { id:"d2t23", name:"Гидрокортизон ПОС (левый глаз)", detail:"Мазь на кожу в/века" },
+          { id:"d2t24", name:"Нимесил", detail:"1 пакет — ПОСЛЕДНИЙ!" },
+          { id:"d2t25", name:"Энтерол", detail:"2-я капсула" },
+          { id:"d2t26", name:"Малавит + Исмиген", detail:"Полоскать + за щёку" },
+          { id:"d2t27", name:"Кларитин", detail:"1 таб" },
+          { id:"d2t28", name:"Цинк пиколинат 50 мг", detail:"После ужина" },
+        ]
+      },
+      {
+        title: "⏰ Через 1 час — вечерний Неттацин",
+        tasks: [
+          { id:"d2t29", name:"Неттацин (левый глаз)", detail:"1 кап" },
         ]
       }
     ]
   },
+
+  // ── 10 МАЯ ─────────────────────────────────────────────────────────────
   {
     label: "10 мая\nДень 4",
     title: "10 мая, воскресенье — День 4",
-    subtitle: "Лавомакс через день. Капли продолжаем.",
-    note: "ℹ️ Окусалин, Нимесил, Сумамед, Кларитин — больше не принимаем. Вит C теперь 1000 мг × 4 раза в день, Вит D 5000 МЕ.",
+    subtitle: "Конец Нимесила и Сумамеда • Альфа нормикс день 2 • Лавомакс приём 3",
+    notes: [
+      { type: "yellow", text: "Нимесил и Сумамед больше не принимаем!\nВит D → 5000 МЕ. Вит C → 1000 мг × 4 р/д.\nАльфа нормикс продолжаем 2-й день." },
+    ],
     sections: [
       {
-        title: "🌅 Утро (завтрак)",
+        title: "🌅 Утро — до завтрака",
+        tasks: [
+          { id:"d3t0", name:"Тримедат 200 мг", detail:"1 таб ДО еды — день 3 (последний)" },
+          { id:"d3t0b", name:"Альфа нормикс 400", detail:"1 таб ДО еды — день 2" },
+        ]
+      },
+      {
+        title: "🌅 Утро (8:00)",
+        tasks: [
+          { id:"d3t1", name:"Мирамистин (оба глаза)", detail:"Туалет век" },
+          { id:"d3t2", name:"Окусалин 3% (левый глаз)", detail:"Обильно промыть" },
+          { id:"d3t3", name:"Комвео (левый глаз)", detail:"1 кап — ждать 1 час до Неттацина" },
+          { id:"d3t4", name:"Офтальмоферон (оба глаза)", detail:"1 кап" },
+          { id:"d3t5", name:"Лавомакс 125 мг", detail:"1 таб — приём 3" },
+          { id:"d3t6", name:"Энтерол", detail:"1 капсула (до 10 дней всего)" },
+          { id:"d3t7", name:"Вит D 5000 МЕ", detail:"В завтрак — новая доза!" },
+          { id:"d3t8", name:"Вит C 1000 мг", detail:"1-й из 4 за день" },
+          { id:"d3t9", name:"Метабиотик", detail:"1 ч.л." },
+        ]
+      },
+      {
+        title: "⏰ Через 1 час после Комвео",
+        tasks: [
+          { id:"d3t10", name:"Неттацин (левый глаз)", detail:"1 кап" },
+        ]
+      },
+      {
+        title: "☀️ День (12:00)",
+        tasks: [
+          { id:"d3t11", name:"Комвео (левый глаз)", detail:"1 кап" },
+          { id:"d3t12", name:"Офтальмоферон (оба глаза)", detail:"1 кап" },
+          { id:"d3t13", name:"Вит C 1000 мг", detail:"2-й приём" },
+          { id:"d3t14", name:"Пепидол 5%", detail:"2 ст.л. — за 1 час до/после лекарств" },
+        ]
+      },
+      {
+        title: "⏰ 13:00 — Неттацин дневной",
+        tasks: [
+          { id:"d3t15", name:"Неттацин (левый глаз)", detail:"1 кап" },
+        ]
+      },
+      {
+        title: "🕒 15:00",
+        tasks: [
+          { id:"d3t16", name:"Вит C 1000 мг", detail:"3-й приём" },
+        ]
+      },
+      {
+        title: "🌙 Вечер — до ужина",
+        tasks: [
+          { id:"d3t17", name:"Альфа нормикс 400", detail:"1 таб ДО ужина — день 2" },
+        ]
+      },
+      {
+        title: "🌙 Вечер (19:00)",
+        tasks: [
+          { id:"d3t18", name:"Мирамистин (оба глаза)", detail:"Туалет век" },
+          { id:"d3t19", name:"Окусалин 3% (левый глаз)", detail:"Обильно промыть" },
+          { id:"d3t20", name:"Комвео (левый глаз)", detail:"1 кап — ждать 1 час" },
+          { id:"d3t21", name:"Офтальмоферон (оба глаза)", detail:"1 кап" },
+          { id:"d3t22", name:"Посиформин 2% (левый глаз)", detail:"Мазь на ресничный край" },
+          { id:"d3t23", name:"Гидрокортизон ПОС (левый глаз)", detail:"Мазь на кожу в/века" },
+          { id:"d3t24", name:"Энтерол", detail:"2-я капсула" },
+          { id:"d3t25", name:"Малавит + Исмиген", detail:"Полоскать + за щёку" },
+          { id:"d3t26", name:"Кларитин", detail:"1 таб" },
+          { id:"d3t27", name:"Цинк пиколинат 50 мг", detail:"После ужина" },
+          { id:"d3t28", name:"Вит C 1000 мг", detail:"4-й приём" },
+        ]
+      },
+      {
+        title: "⏰ 20:00 — вечерний Неттацин",
+        tasks: [
+          { id:"d3t29", name:"Неттацин (левый глаз)", detail:"1 кап" },
+        ]
+      }
+    ]
+  },
+
+  // ── 11 МАЯ ─────────────────────────────────────────────────────────────
+  {
+    label: "11 мая\nДень 5",
+    title: "11 мая, понедельник — День 5",
+    subtitle: "Последний день Альфа нормикса • Лавомакс через день (пропуск)",
+    notes: [
+      { type: "yellow", text: "Альфа нормикс — последний день (3-й)!\nЛавомакс сегодня НЕ принимаем — следующий 12 мая.\nТримедат закончился вчера." },
+    ],
+    sections: [
+      {
+        title: "🌅 Утро — до завтрака",
+        tasks: [
+          { id:"d4t0", name:"Альфа нормикс 400", detail:"1 таб ДО еды — ПОСЛЕДНИЙ (день 3)" },
+        ]
+      },
+      {
+        title: "🌅 Утро (8:00)",
         tasks: [
           { id:"d4t1", name:"Мирамистин (оба глаза)", detail:"Туалет век" },
-          { id:"d4t2", name:"Комвео (левый глаз)", detail:"1 кап × 6 р/д" },
-          { id:"d4t3", name:"Неттацин (левый глаз)", detail:"1 кап × 6 р/д (пауза 5 мин)" },
-          { id:"d4t4", name:"Офтальмоферон (оба глаза)", detail:"1 кап × 3 р/д" },
-          { id:"d4t5", name:"Лавомакс 125 мг", detail:"1 таб — 3-й приём (через день)" },
-          { id:"d4t6", name:"Вит D 5000 МЕ", detail:"В завтрак (новая доза!)" },
-          { id:"d4t7", name:"Вит C эстер 1000 мг", detail:"После еды (1-й из 4)" },
+          { id:"d4t2", name:"Окусалин 3% (левый глаз)", detail:"Обильно промыть" },
+          { id:"d4t3", name:"Комвео (левый глаз)", detail:"1 кап — ждать 1 час" },
+          { id:"d4t4", name:"Офтальмоферон (оба глаза)", detail:"1 кап" },
+          { id:"d4t5", name:"Энтерол", detail:"1 капсула" },
+          { id:"d4t6", name:"Вит D 5000 МЕ", detail:"В завтрак" },
+          { id:"d4t7", name:"Вит C 1000 мг", detail:"1-й из 4" },
+          { id:"d4t8", name:"Метабиотик", detail:"1 ч.л." },
         ]
       },
       {
-        title: "☀️ День",
+        title: "⏰ 09:00 — Неттацин",
+        tasks: [{ id:"d4t9", name:"Неттацин (левый глаз)", detail:"1 кап" }]
+      },
+      {
+        title: "☀️ День (12:00)",
         tasks: [
-          { id:"d4t8", name:"Вит C эстер 1000 мг", detail:"2-й и 3-й приём" },
-          { id:"d4t9", name:"Комвео и Неттацин", detail:"По расписанию 6 р/д" },
-          { id:"d4t10", name:"Офтальмоферон", detail:"3 р/д" },
+          { id:"d4t10", name:"Комвео (левый глаз)", detail:"1 кап" },
+          { id:"d4t11", name:"Офтальмоферон (оба)", detail:"1 кап" },
+          { id:"d4t12", name:"Вит C 1000 мг", detail:"2-й приём" },
+          { id:"d4t13", name:"Пепидол 5%", detail:"2 ст.л. — за 1 час до/после лекарств" },
+          { id:"d4t14", name:"Альфа нормикс 400", detail:"1 таб ДО обеда — ПОСЛЕДНИЙ вечерний" },
         ]
       },
       {
-        title: "🌙 Вечер / перед сном",
+        title: "⏰ 13:00 — Неттацин",
+        tasks: [{ id:"d4t15", name:"Неттацин (левый глаз)", detail:"1 кап" }]
+      },
+      {
+        title: "🕒 15:00",
+        tasks: [{ id:"d4t16", name:"Вит C 1000 мг", detail:"3-й приём" }]
+      },
+      {
+        title: "🌙 Вечер (19:00)",
         tasks: [
-          { id:"d4t11", name:"Мирамистин (оба глаза)", detail:"Туалет век" },
-          { id:"d4t12", name:"Посиформин 2% (левый глаз)", detail:"Мазь за верхнее веко" },
-          { id:"d4t13", name:"Гидрокортизон ПОС (левый глаз)", detail:"Мазь на кожу века" },
-          { id:"d4t14", name:"Малавит", detail:"Полоскать горло" },
-          { id:"d4t15", name:"Исмиген", detail:"1 таб за щёку на ночь" },
-          { id:"d4t16", name:"Вит C эстер 1000 мг", detail:"4-й приём за день" },
-          { id:"d4t17", name:"Цинк пиколинат 50 мг", detail:"После ужина" },
+          { id:"d4t17", name:"Мирамистин (оба глаза)", detail:"Туалет век" },
+          { id:"d4t18", name:"Окусалин 3% (левый глаз)", detail:"Промыть" },
+          { id:"d4t19", name:"Комвео (левый глаз)", detail:"1 кап — ждать 1 час" },
+          { id:"d4t20", name:"Офтальмоферон (оба)", detail:"1 кап" },
+          { id:"d4t21", name:"Посиформин 2% (левый)", detail:"Мазь на ресничный край" },
+          { id:"d4t22", name:"Гидрокортизон ПОС (левый)", detail:"Мазь на кожу в/века" },
+          { id:"d4t23", name:"Энтерол", detail:"2-я капсула" },
+          { id:"d4t24", name:"Малавит + Исмиген", detail:"Полоскать + за щёку" },
+          { id:"d4t25", name:"Кларитин", detail:"1 таб" },
+          { id:"d4t26", name:"Цинк пиколинат 50 мг", detail:"После ужина" },
+          { id:"d4t27", name:"Вит C 1000 мг", detail:"4-й приём" },
         ]
+      },
+      {
+        title: "⏰ 20:00 — Неттацин",
+        tasks: [{ id:"d4t28", name:"Неттацин (левый глаз)", detail:"1 кап" }]
       }
     ]
   },
+
+  // ── 12–17 МАЯ ──────────────────────────────────────────────────────────
   {
-    label: "11–15 мая\nДни 5–9",
-    title: "11–15 мая — Дни 5–9",
+    label: "12–17 мая\nДни 6–11",
+    title: "12–17 мая — Дни 6–11",
     subtitle: "Стабильный режим. Лавомакс через день.",
-    note: "📅 Лавомакс 125 мг — через день: 10, 12, 14, 16 мая (последний). Комвео и Неттацин до 14 мая включительно (7 дней от 7 мая). Посиформин: с 14 мая — только на ночь.",
+    notes: [
+      { type: "yellow", text: "📅 Лавомакс через день: 12, 14, 16 мая (последний #6)\n📅 Окусалин, Комвео, Неттацин — до 15 мая (7 дней от 8 мая)\n📅 Энтерол, Кларитин, Малавит+Исмиген — до 17 мая (10 дней)\n📅 Пепидол 5% — до 27 мая (20 дней)\n📅 Метабиотик — продолжаем по инструкции\n📅 С 15 мая Посиформин — только на ночь" },
+    ],
     sections: [
       {
-        title: "🌅 Утро",
+        title: "🌅 Каждое утро (8:00)",
         tasks: [
-          { id:"d5t1", name:"Мирамистин (оба глаза)", detail:"Туалет век — ежедневно" },
-          { id:"d5t2", name:"Комвео (левый глаз)", detail:"1 кап × 6 р/д — до 14 мая" },
-          { id:"d5t3", name:"Неттацин (левый глаз)", detail:"1 кап × 6 р/д — до 14 мая" },
-          { id:"d5t4", name:"Офтальмоферон (оба глаза)", detail:"1 кап × 3 р/д — до 16 мая" },
-          { id:"d5t5", name:"Вит D 5000 МЕ", detail:"Каждый день в завтрак (1 месяц)" },
-          { id:"d5t6", name:"Вит C эстер 1000 мг", detail:"× 4 раза в день после еды" },
+          { id:"d5t1", name:"Мирамистин (оба глаза)", detail:"Туалет век" },
+          { id:"d5t2", name:"Окусалин 3% (левый глаз)", detail:"Промыть — до 17 мая" },
+          { id:"d5t3", name:"Комвео (левый глаз)", detail:"1 кап — ждать 1 час до Неттацина" },
+          { id:"d5t4", name:"Офтальмоферон (оба)", detail:"1 кап × 3 р/д — до 18 мая" },
+          { id:"d5t5", name:"Энтерол", detail:"1 капсула — до 17 мая" },
+          { id:"d5t6", name:"Вит D 5000 МЕ", detail:"Каждое утро — 1 месяц" },
+          { id:"d5t7", name:"Вит C 1000 мг", detail:"1-й из 4" },
+          { id:"d5t8", name:"Метабиотик", detail:"1 ч.л. в день" },
         ]
       },
       {
-        title: "🌙 Вечер / перед сном",
+        title: "⏰ Через 1 час — Неттацин утро",
+        tasks: [{ id:"d5t9", name:"Неттацин (левый глаз)", detail:"1 кап — до 15 мая" }]
+      },
+      {
+        title: "☀️ День (12:00)",
         tasks: [
-          { id:"d5t7", name:"Посиформин 2% (левый глаз)", detail:"2 р/д до 14 мая, затем только на ночь до 21 мая" },
-          { id:"d5t8", name:"Гидрокортизон ПОС (левый глаз)", detail:"Мазь на кожу века — до 21 мая" },
-          { id:"d5t9", name:"Малавит + Исмиген", detail:"Полоскать горло + таб за щёку — до 16 мая" },
-          { id:"d5t10", name:"Цинк пиколинат 50 мг", detail:"После ужина — до 21 мая" },
+          { id:"d5t10", name:"Комвео (левый глаз)", detail:"1 кап" },
+          { id:"d5t11", name:"Офтальмоферон (оба)", detail:"1 кап" },
+          { id:"d5t12", name:"Вит C 1000 мг", detail:"2-й приём" },
+          { id:"d5t13", name:"Пепидол 5%", detail:"2 ст.л. — за 1 час до/после лекарств" },
+        ]
+      },
+      {
+        title: "⏰ 13:00 — Неттацин день",
+        tasks: [{ id:"d5t14", name:"Неттацин (левый глаз)", detail:"1 кап — до 15 мая" }]
+      },
+      {
+        title: "🕒 15:00",
+        tasks: [{ id:"d5t15", name:"Вит C 1000 мг", detail:"3-й приём" }]
+      },
+      {
+        title: "🌙 Каждый вечер (19:00)",
+        tasks: [
+          { id:"d5t16", name:"Мирамистин (оба глаза)", detail:"Туалет век" },
+          { id:"d5t17", name:"Окусалин 3% (левый)", detail:"Промыть — до 17 мая" },
+          { id:"d5t18", name:"Комвео (левый)", detail:"1 кап — ждать 1 час" },
+          { id:"d5t19", name:"Офтальмоферон (оба)", detail:"1 кап" },
+          { id:"d5t20", name:"Посиформин 2% (левый)", detail:"2 р/д до 14 мая, потом только на ночь" },
+          { id:"d5t21", name:"Гидрокортизон ПОС (левый)", detail:"До 22 мая" },
+          { id:"d5t22", name:"Энтерол", detail:"2-я капсула — до 17 мая" },
+          { id:"d5t23", name:"Малавит + Исмиген", detail:"До 17 мая" },
+          { id:"d5t24", name:"Кларитин", detail:"1 таб — до 17 мая" },
+          { id:"d5t25", name:"Цинк пиколинат 50 мг", detail:"До 22 мая" },
+          { id:"d5t26", name:"Вит C 1000 мг", detail:"4-й приём" },
+        ]
+      },
+      {
+        title: "⏰ 20:00 — Неттацин вечер",
+        tasks: [{ id:"d5t27", name:"Неттацин (левый глаз)", detail:"1 кап — до 15 мая" }]
+      },
+      {
+        title: "📅 Лавомакс — через день",
+        tasks: [
+          { id:"d5t28", name:"Лавомакс 125 мг", detail:"12 мая (приём 4) • 14 мая (приём 5) • 16 мая (приём 6 — последний)" },
         ]
       }
     ]
   },
+
+  // ── 17–22 МАЯ ──────────────────────────────────────────────────────────
   {
-    label: "16–21 мая\nФинал",
-    title: "16–21 мая — Завершение",
-    subtitle: "Постепенно отменяем препараты.",
-    note: "✅ 16 мая: последний Лавомакс (6-я таблетка), последний Офтальмоферон, последний Малавит+Исмиген. С 17 мая — только мази и витамины.",
+    label: "17–22 мая\nФинал",
+    title: "17–22 мая — Завершение",
+    subtitle: "Постепенно отменяем препараты",
+    notes: [
+      { type: "yellow", text: "17 мая: последние Энтерол, Кларитин, Малавит, Исмиген\n18 мая: последние Окусалин, Комвео, Неттацин, Офтальмоферон\n22 мая: последние Посиформин, Гидрокортизон, Цинк\n27 мая: последний Пепидол\nВит D 5000 — до ~8 июня\nВит C 500 мг × 2 — ещё 2 недели после 1000×4" },
+    ],
     sections: [
       {
-        title: "До 21 мая ежедневно",
+        title: "До 22 мая ежедневно",
         tasks: [
-          { id:"d6t1", name:"Посиформин 2% (левый глаз)", detail:"Только на ночь — до 21 мая" },
-          { id:"d6t2", name:"Гидрокортизон ПОС (левый глаз)", detail:"Мазь на кожу века 2 р/д — до 21 мая" },
-          { id:"d6t3", name:"Цинк пиколинат 50 мг", detail:"Вечером после еды — до 21 мая" },
-          { id:"d6t4", name:"Вит D 5000 МЕ", detail:"Каждое утро — ещё ~3 недели (до ~7 июня)" },
-          { id:"d6t5", name:"Вит C 500 мг", detail:"× 2 раза в день — 2 недели (с ~17 мая)" },
+          { id:"d6t1", name:"Посиформин 2% (левый)", detail:"Только на ночь — до 22 мая" },
+          { id:"d6t2", name:"Гидрокортизон ПОС (левый)", detail:"Мазь на кожу 2 р/д — до 22 мая" },
+          { id:"d6t3", name:"Цинк пиколинат 50 мг", detail:"Вечером — до 22 мая" },
+          { id:"d6t4", name:"Вит D 5000 МЕ", detail:"Каждое утро — до ~8 июня" },
+          { id:"d6t5", name:"Вит C", detail:"1000 мг × 4 р/д → потом 500 мг × 2 р/д" },
+          { id:"d6t6", name:"Пепидол 5%", detail:"2 ст.л. 2 р/д — до 27 мая" },
+          { id:"d6t7", name:"Метабиотик", detail:"1 ч.л. в день — по инструкции" },
         ]
       }
     ]
@@ -528,20 +627,16 @@ const DAYS = [
 ];
 
 let currentDay = 0;
-const storage = {};
+const storage = JSON.parse(localStorage.getItem('lechenie_v2') || '{}');
 
-function getKey(dayIdx, taskId) { return `day${dayIdx}_${taskId}`; }
-
-function isTaskDone(dayIdx, taskId) {
-  return !!storage[getKey(dayIdx, taskId)];
-}
-
+function getKey(dayIdx, taskId) { return `v2_day${dayIdx}_${taskId}`; }
+function isTaskDone(dayIdx, taskId) { return !!storage[getKey(dayIdx, taskId)]; }
 function toggleTask(dayIdx, taskId) {
   const k = getKey(dayIdx, taskId);
   storage[k] = !storage[k];
+  localStorage.setItem('lechenie_v2', JSON.stringify(storage));
   render();
 }
-
 function countDayTasks(dayIdx) {
   const day = DAYS[dayIdx];
   let total = 0, done = 0;
@@ -553,7 +648,6 @@ function countDayTasks(dayIdx) {
 }
 
 function render() {
-  // Nav
   const nav = document.getElementById('dayNav');
   nav.innerHTML = DAYS.map((d, i) => {
     const { total, done } = countDayTasks(i);
@@ -561,22 +655,24 @@ function render() {
     return `<button class="day-btn ${i===currentDay?'active':''} ${isComplete&&i!==currentDay?'completed':''}" onclick="switchDay(${i})">${d.label.replace('\n','<br>')}</button>`;
   }).join('');
 
-  // Panels
   const panels = document.getElementById('panels');
   panels.innerHTML = DAYS.map((d, i) => {
     if (i !== currentDay) return `<div class="day-panel" id="panel${i}"></div>`;
     let html = `<div class="day-panel active" id="panel${i}">`;
     html += `<div class="day-title">${d.title}</div>`;
     html += `<div class="day-subtitle">${d.subtitle}</div>`;
-    if (d.note) html += `<div class="note-box">${d.note}</div>`;
+    (d.notes || []).forEach(n => {
+      html += `<div class="note-box ${n.type}">${n.text.replace(/\n/g,'<br>')}</div>`;
+    });
     d.sections.forEach(s => {
       html += `<div class="section"><div class="section-title">${s.title}</div>`;
       s.tasks.forEach(t => {
         const done = isTaskDone(i, t.id);
+        const badge = t.isNew ? '<span class="new-badge">НОВОЕ</span>' : '';
         html += `<div class="task ${done?'done':''}" onclick="toggleTask(${i},'${t.id}')">
           <div class="checkbox"><span class="checkbox-icon">✓</span></div>
           <div class="task-content">
-            <div class="task-name">${t.name}</div>
+            <div class="task-name">${t.name}${badge}</div>
             <div class="task-detail">${t.detail}</div>
           </div>
         </div>`;
@@ -587,24 +683,18 @@ function render() {
     return html;
   }).join('');
 
-  // Progress
   const { total, done } = countDayTasks(currentDay);
   const pct = total > 0 ? Math.round(done/total*100) : 0;
   document.getElementById('progressFill').style.width = pct + '%';
   document.getElementById('progressLabel').textContent = `${done} из ${total} выполнено сегодня`;
 }
 
-function switchDay(i) {
-  currentDay = i;
-  render();
-  window.scrollTo(0, 0);
-}
-
+function switchDay(i) { currentDay = i; render(); window.scrollTo(0,0); }
 function resetDay() {
-  const day = DAYS[currentDay];
-  day.sections.forEach(s => s.tasks.forEach(t => {
+  DAYS[currentDay].sections.forEach(s => s.tasks.forEach(t => {
     delete storage[getKey(currentDay, t.id)];
   }));
+  localStorage.setItem('lechenie_v2', JSON.stringify(storage));
   render();
 }
 
